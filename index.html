@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WildCAD-E — Wildland Fire Dispatch, Reimagined</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M16 2C16 2 8 10 8 18a8 8 0 0016 0c0-8-8-16-8-16z" fill="url(#flame1)" />
+          <path d="M16 10c0 0-4 5-4 9a4 4 0 008 0c0-4-4-9-4-9z" fill="url(#flame2)" />
+          <defs>
+            <linearGradient id="flame1" x1="16" y1="2" x2="16" y2="26" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B1A" />
+              <stop offset="1" stop-color="#FFB347" />
+            </linearGradient>
+            <linearGradient id="flame2" x1="16" y1="10" x2="16" y2="23" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFF3E0" />
+              <stop offset="1" stop-color="#FF6B1A" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="nav-wordmark">WildCAD<span class="nav-e">-E</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#sparky">Ask Sparky</a></li>
+        <li><a href="#audiences">Who It's For</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <a class="btn-primary btn-sm" href="https://wce-ai.wildwebe.net" target="_blank" rel="noopener">Try Sparky</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="ember-canvas" id="emberCanvas" aria-hidden="true"></div>
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Built for Wildland Fire</span>
+      <h1 class="hero-headline">
+        Dispatch Faster.<br />
+        See <span class="text-gradient">Everything</span>.<br />
+        Save More Ground.
+      </h1>
+      <p class="hero-sub">
+        WildCAD-E is the AI-powered Computer Aided Dispatch system built exclusively for wildland fire agencies — giving
+        dispatchers and crews in the field a single source of truth when every second counts.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="#contact">Request Access</a>
+        <a class="btn-ghost" href="#features">See the Platform</a>
+      </div>
+      <div class="hero-partners">
+        <span class="partners-label">A joint effort by</span>
+        <div class="partners-logos">
+          <span class="partner-badge">SAIC</span>
+          <span class="partner-sep">×</span>
+          <span class="partner-badge">Bighorn Information Systems</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="app-screenshot-frame">
+        <div class="screenshot-titlebar">
+          <div class="mockup-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="screenshot-url">Wildland Computer-Aided Dispatch Enterprise <span class="screenshot-ver">v2.1</span></span>
+        </div>
+        <div class="screenshot-body">
+          <img
+            src="app-screenshot.png"
+            alt="WildCAD-E dispatch console showing Open Incidents, Map, and Resource Status panels"
+            width="1392"
+            height="805"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar" aria-label="Platform statistics">
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <span class="stat-num">50+</span>
+        <span class="stat-label">Dispatch Centers</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Federal Agencies</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">Real-Time</span>
+        <span class="stat-label">Situational Awareness</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">AI-Powered</span>
+        <span class="stat-label">Ask Sparky Intelligence</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASK SPARKY SPOTLIGHT -->
+  <section class="sparky-section" id="sparky">
+    <div class="container">
+      <div class="sparky-inner">
+        <div class="sparky-visual reveal" aria-hidden="true">
+          <div class="sparky-card">
+            <div class="sparky-avatar">
+              <div class="sparky-flame-ring"></div>
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                <circle cx="26" cy="26" r="26" fill="#1a0a2e" />
+                <path d="M26 8C26 8 16 20 16 30a10 10 0 0020 0c0-10-10-22-10-22z" fill="url(#sf1)" />
+                <path d="M26 18c0 0-5 7-5 12a5 5 0 0010 0c0-5-5-12-5-12z" fill="url(#sf2)" />
+                <defs>
+                  <linearGradient id="sf1" x1="26" y1="8" x2="26" y2="40" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#7C3AED" />
+                    <stop offset="1" stop-color="#FF6B1A" />
+                  </linearGradient>
+                  <linearGradient id="sf2" x1="26" y1="18" x2="26" y2="35" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#DDD6FE" />
+                    <stop offset="1" stop-color="#7C3AED" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="sparky-chat">
+              <div class="chat-bubble user">
+                <span class="chat-label">Dispatcher</span>
+                "How do I create a new incident in WildCAD-E?"
+              </div>
+              <div class="chat-bubble sparky">
+                <span class="chat-label">Sparky AI</span>
+                <span class="typing-text">Go to the Incidents tab and click <strong>+ New Incident</strong>. Fill in the incident name, type, and location — then assign resources from the resource panel on the right. I can walk you through each field if you'd like.</span>
+              </div>
+              <div class="chat-bubble user">
+                <span class="chat-label">Dispatcher</span>
+                "What's new in the latest release?"
+              </div>
+              <div class="chat-bubble sparky">
+                <span class="chat-label">Sparky AI</span>
+                <span class="typing-text">The latest release includes improved ICS form auto-population, enhanced resource rostering filters, and several fixes to the timer alert threshold configuration. Want me to pull the full release notes?</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sparky-copy reveal">
+          <span class="section-badge purple">AI-Powered Help</span>
+          <h2 class="section-heading">Meet Sparky,<br />Your WildCAD-E Guide</h2>
+          <p class="section-body">
+            Sparky is WildCAD-E's built-in AI assistant, trained on the official user guides, release notes, and system
+            documentation. Ask questions in plain language — get instant, accurate answers without digging through
+            manuals or waiting on support.
+          </p>
+          <ul class="sparky-capabilities">
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" stroke="#7C3AED" stroke-width="1.5" />
+                <path d="M6 10l3 3 5-5" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              Step-by-step guidance for incidents, resources, and units
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" stroke="#7C3AED" stroke-width="1.5" />
+                <path d="M6 10l3 3 5-5" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              Instant answers from official WildCAD-E user guides
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" stroke="#7C3AED" stroke-width="1.5" />
+                <path d="M6 10l3 3 5-5" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              Release note lookups — "What's new in this version?"
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" stroke="#7C3AED" stroke-width="1.5" />
+                <path d="M6 10l3 3 5-5" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              Admin setup, user logins, and system configuration help
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" stroke="#7C3AED" stroke-width="1.5" />
+                <path d="M6 10l3 3 5-5" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              Troubleshooting — answers grounded in real documentation
+            </li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a class="btn-primary" href="https://wce-ai.wildwebe.net" target="_blank" rel="noopener">
+              Try Sparky Live
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline-block">
+                <path d="M6 3h7v7M13 3L3 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES GRID -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">Platform</span>
+        <h2 class="section-heading">Everything Wildland Fire Demands</h2>
+        <p class="section-sub">Purpose-built for the chaos of initial attack and large fire operations — not adapted
+          from a police CAD system.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card reveal">
+          <div class="feature-icon orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M9 3v18M3 9h6M3 15h6" />
+              <circle cx="15.5" cy="10.5" r="2.5" />
+              <path d="M13 21l2.5-4 2.5 4" />
+            </svg>
+          </div>
+          <h3>Dynamic Desktop</h3>
+          <p>Open multiple incident windows simultaneously. Dockable panels for resources, timers, and checklists — each
+            dispatcher gets the exact layout they need.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 12a9 9 0 1018 0A9 9 0 003 12z" />
+              <path d="M3 12h18M12 3a15.3 15.3 0 010 18M12 3a15.3 15.3 0 000 18" />
+              <path d="M8 7l2 2-2 2M16 7l-2 2 2 2" />
+            </svg>
+          </div>
+          <h3>Live Map with Custom Layers</h3>
+          <p>Add your own agency data — FuelMoisture, pretreatment areas, historical fire scars, PACE data — on top of
+            real-time resource locations and perimeter feeds.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="7" width="5" height="11" rx="1" />
+              <rect x="9" y="4" width="5" height="14" rx="1" />
+              <rect x="16" y="2" width="6" height="16" rx="1" />
+              <path d="M2 21h20" />
+            </svg>
+          </div>
+          <h3>Resource Management</h3>
+          <p>Track every engine, crew, dozer, aircraft, and overhead across your entire zone. Status, availability,
+            location, and certification — all in one panel.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3>Smart Routing</h3>
+          <p>Automatically calculate best routes for each resource type considering road access, fire perimeter,
+            hazardous terrain, and current resource positions.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+          <h3>Incident Timers</h3>
+          <p>Track critical operational windows — escape route timers, safety zone clearance times, briefing countdowns,
+            and shift rotations — visible across all open incidents.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+            </svg>
+          </div>
+          <h3>Multi-Agency Coordination</h3>
+          <p>Share incidents and resources across dispatch zones. Federated access model allows BLM, USFS, state, and
+            local agencies to work from the same operational picture.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR — DISPATCH FOCUS -->
+  <section class="audiences-section audiences-single" id="audiences">
+    <div class="audience-panel dispatch dispatch-full">
+      <div class="audience-bg dispatch-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="audience-content reveal">
+          <span class="audience-badge blue">Who It's For</span>
+          <h2>Built for the Dispatch Center</h2>
+          <p>Managing multiple concurrent fires across thousands of acres requires a workspace built to keep pace.
+            WildCAD-E was designed by people who've sat in the dispatch center — every workflow, every shortcut,
+            every decision support tool built for speed under pressure.</p>
+          <ul class="audience-points audience-points-grid">
+            <li>Multi-incident windows open simultaneously</li>
+            <li>One-click resource assignment and routing</li>
+            <li>Sparky AI surfacing critical information automatically</li>
+            <li>Customizable alerting thresholds and escalations</li>
+            <li>Full ICS forms integration and auto-population</li>
+            <li>Resource rostering and availability tracking</li>
+            <li>Multi-agency coordination across dispatch zones</li>
+            <li>Incident timeline summaries and audit trail</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IRWIN / INTEGRATIONS -->
+  <section class="integrations-section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Integrations</span>
+        <h2 class="section-heading">Connected to the Wildland Fire Ecosystem</h2>
+        <p class="section-sub">WildCAD-E speaks the same language as the tools you already rely on.</p>
+      </div>
+      <div class="integrations-row">
+        <div class="integration-badge">IRWIN</div>
+        <div class="integration-badge">ArcGIS</div>
+        <div class="integration-badge">ROSS</div>
+        <div class="integration-badge">WFDSS</div>
+        <div class="integration-badge">FAMWEB</div>
+        <div class="integration-badge">MODIS / VIIRS</div>
+        <div class="integration-badge">NOAA Weather</div>
+        <div class="integration-badge">NIFC Data</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / PARTNERSHIP -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-copy reveal">
+          <span class="section-badge">About</span>
+          <h2 class="section-heading">Built by the Best, for Those on the Line</h2>
+          <p class="section-body">
+            WildCAD-E is a joint initiative between <strong>SAIC</strong> (Science Applications International
+            Corporation) and <strong>Bighorn Information Systems (BIS)</strong>, managed by the U.S. Department of the
+            Interior and jointly funded with the U.S. Forest Service.
+          </p>
+          <p class="section-body">
+            SAIC brings large-scale federal systems integration and engineering depth. BIS brings decades of deep
+            expertise in wildland fire software. Together, they built the system that wildland fire dispatchers have
+            needed for years — modern, cloud-native, and AI-forward.
+          </p>
+          <div class="partner-cards">
+            <div class="partner-card">
+              <span class="pc-name">SAIC</span>
+              <span class="pc-role">Systems Integration & Engineering</span>
+            </div>
+            <div class="partner-card">
+              <span class="pc-name">BIS</span>
+              <span class="pc-role">Wildland Fire Domain Expertise</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal" aria-hidden="true">
+          <div class="agency-grid">
+            <div class="agency-badge doi">DOI</div>
+            <div class="agency-badge usfs">USFS</div>
+            <div class="agency-badge blm">BLM</div>
+            <div class="agency-badge nps">NPS</div>
+            <div class="agency-badge bia">BIA</div>
+            <div class="agency-badge fws">USFWS</div>
+          </div>
+          <p class="agency-caption">Serving federal and state wildland fire dispatch since 2019</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section class="cta-section" id="contact">
+    <div class="cta-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cta-inner reveal">
+        <h2 class="cta-heading">Ready to Modernize Your Dispatch Operation?</h2>
+        <p class="cta-sub">WildCAD-E is authorized for federal agencies and state cooperators. Contact us to learn about
+          access, training, and deployment options.</p>
+        <div class="cta-buttons">
+          <a class="btn-primary btn-lg" href="mailto:wildcade@saic.com">Request Access</a>
+          <a class="btn-ghost btn-lg" href="https://www.wildfire.gov/application/wildcade" target="_blank"
+            rel="noopener">Learn More at Wildfire.gov</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="nav-logo" href="#">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+              <path d="M16 2C16 2 8 10 8 18a8 8 0 0016 0c0-8-8-16-8-16z" fill="url(#footerFlame1)" />
+              <path d="M16 10c0 0-4 5-4 9a4 4 0 008 0c0-4-4-9-4-9z" fill="url(#footerFlame2)" />
+              <defs>
+                <linearGradient id="footerFlame1" x1="16" y1="2" x2="16" y2="26" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF6B1A" />
+                  <stop offset="1" stop-color="#FFB347" />
+                </linearGradient>
+                <linearGradient id="footerFlame2" x1="16" y1="10" x2="16" y2="23" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FFF3E0" />
+                  <stop offset="1" stop-color="#FF6B1A" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="nav-wordmark">WildCAD<span class="nav-e">-E</span></span>
+          </a>
+          <p class="footer-tagline">Wildland Fire Dispatch, Reimagined.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <span class="footer-col-heading">Platform</span>
+            <a href="#features">Features</a>
+            <a href="#sparky">Ask Sparky</a>
+            <a href="#audiences">Use Cases</a>
+            <a href="#integrations">Integrations</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-heading">Resources</span>
+            <a href="https://www.wildfire.gov/application/wildcade" target="_blank" rel="noopener">Wildfire.gov</a>
+            <a href="https://www.wildfire.gov/page/about-project-wildcad-e" target="_blank" rel="noopener">About the
+              Project</a>
+            <a href="https://www.nifc.gov" target="_blank" rel="noopener">NIFC</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-heading">Partners</span>
+            <a href="https://www.saic.com" target="_blank" rel="noopener">SAIC</a>
+            <a href="#about">Bighorn Information Systems</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 WildCAD-E Program. A joint SAIC &amp; Bighorn Information Systems initiative. Managed by U.S.
+          Department of the Interior.</p>
+        <p>Built to serve the men and women protecting America's wildlands.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
