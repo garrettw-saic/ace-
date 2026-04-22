@@ -16,7 +16,7 @@
 
   // SHA-256 of "WildCAD2026!"
   const PASSWORD_HASH = '81c0e1808ccf98b762746beb5439c19ce5b94123dc70d3b9653572bdef73d32f';
-  const SESSION_KEY   = 'wce_pub_auth';
+  const SESSION_KEY = 'wce_pub_auth';
 
   /* ------ helpers ------ */
   async function sha256(str) {
@@ -85,7 +85,7 @@
           </div>
           <p class="wce-gate-error" id="wce-gate-error" aria-live="polite"></p>
         </form>
-        <p class="wce-gate-contact">Need access? <a href="mailto:wildcade@saic.com">Contact the WildCAD-E team</a></p>
+        <p class="wce-gate-contact">Need access? <a href="mailto:dontemail@.com">Contact the WildCAD-E team</a></p>
       </div>
     `;
 
@@ -161,9 +161,9 @@
     /* wire up the form */
     document.getElementById('wce-gate-form').addEventListener('submit', async function (e) {
       e.preventDefault();
-      const input  = document.getElementById('wce-pw-input');
-      const errEl  = document.getElementById('wce-gate-error');
-      const btn    = overlay.querySelector('.wce-pw-btn');
+      const input = document.getElementById('wce-pw-input');
+      const errEl = document.getElementById('wce-gate-error');
+      const btn = overlay.querySelector('.wce-pw-btn');
 
       btn.style.opacity = '0.5';
       btn.disabled = true;
